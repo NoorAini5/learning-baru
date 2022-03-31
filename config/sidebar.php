@@ -19,18 +19,18 @@ return [
             'url' => '/admin/dashboard',
             'caret' => false
         ],
-        [
-            'icon' => 'fa fa-users',
-            'title' => 'Pengguna',
-            'url' => '/admin/user',
-            'caret' => false,
-        ],
-        [
-            'icon' => 'fa fa-users',
-            'title' => 'Admin',
-            'url' => '/admin/admin',
-            'caret' => false,
-        ],
+        // [
+        //     'icon' => 'fa fa-users',
+        //     'title' => 'Pengguna',
+        //     'url' => '/admin/user',
+        //     'caret' => false,
+        // ],
+        // [
+        //     'icon' => 'fa fa-users',
+        //     'title' => 'Admin',
+        //     'url' => '/admin/admin',
+        //     'caret' => false,
+        // ],
         [
             'icon' => 'fa fa-cogs',
             'title' => 'Master',
@@ -54,7 +54,32 @@ return [
                     'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Pendidikan'
                 ]
             ]
-        ]
+                ],
+                [
+                    'icon' => 'fa fa-school',
+                    'title' => 'Sekolah',
+                    'url' => 'javascript:;',
+                    'caret' => true,
+                    'sub_menu' => [
+                        [
+                            'url' => '/admin/master-data/guru',
+                            'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Guru'
+                        ],[
+                            'url' => '/admin/master-data/siswa',
+                            'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Siswa'
+                        ], [
+                            'url' => '/admin/master-data/kelas',
+                            'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Kelas'
+                        ], [
+                            'url' => '/admin/master-data/mapel',
+                            'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Mapel'
+                        ],[
+                            'url' => '/admin/master-data/materi',
+                            'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Materi'
+                        ]
+                    ]
+                ]
+
     ],
 
     'menu_user' => [

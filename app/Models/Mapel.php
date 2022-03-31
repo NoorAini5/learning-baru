@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
+
+
+class Mapel extends Model
+{
+    use HasFactory;
+    use SoftDeletes;
+
+    public const ACTIVE = "aktif";
+
+    protected $table = 'mapels';
+    protected $fillable = ['nama','kelas_id','guru'];
+    public $timestamps = false;
+
+    public function Kelas()
+    {
+        return $this->belongsTo(Kelas::class, 'kelas_id');
+    }
+    public function Guru()
+    {
+        return $this->belongsTo(Guru::class, 'guru');
+    }
+
+}

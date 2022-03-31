@@ -18,8 +18,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::resource('/mahasiswa', 'MahasiswaController');
         Route::get('/pages/user/mahasiswa/edit/{mahasiswa}', 'MahasiswaController@edit');
 
-        Route::resource('info', 'InfoController'); 
-        Route::resource('prodi', 'ProdiController'); 
+        Route::resource('info', 'InfoController');
+        Route::resource('prodi', 'ProdiController');
         Route::resource('status', 'StatusController');
 
         Route::resource('/admin', 'AdminController');
@@ -40,8 +40,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             Route::resource('pekerjaan', 'PekerjaanController');
             Route::resource('status-kawin', 'StatusKawinController');
             Route::resource('pendidikan', 'PendidikanController');
+            Route::resource('siswa', 'siswaController');
+            Route::resource('guru', 'GuruController');
+            Route::resource('kelas', 'KelasController');
+            Route::resource('mapel', 'MapelController');
+            Route::resource('materi', 'MateriController');
 
- 
         });
 
         // tambahan
