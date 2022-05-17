@@ -34,8 +34,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             Route::resource('agama', 'AgamaController');
             Route::resource('fakultas', 'FakultasController');
             Route::resource('slider', 'SliderController');
-            // Route::get('file-upload', [ SliderController::class, 'Slider' ])->name('file.upload');
-            // Route::post('file-upload', [ SliderController::class, 'Slider' ])->name('file.upload.post');
+            // Route::get('file-upload', [ TugasController::class, 'Tugas' ])->name('file.upload');
+            // Route::post('file-upload', [ TugasController::class, 'Tugas' ])->name('file.upload.post');
             Route::resource('tahun', 'TahunController');
             Route::resource('pekerjaan', 'PekerjaanController');
             Route::resource('status-kawin', 'StatusKawinController');
@@ -45,8 +45,22 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             Route::resource('kelas', 'KelasController');
             Route::resource('mapel', 'MapelController');
             Route::resource('materi', 'MateriController');
-
+            Route::resource('diskusi', 'DiskusiController');
+            Route::resource('tugas', 'TugasController');
+            Route::resource('ujian', 'UjianController');
         });
+
+        //upload
+        Route::get('/upload', 'TugasController@upload');
+        Route::post('/upload/proses', 'TugasController@proses_upload');
+
+        //coba upload 2
+        Route::get('/uploads', 'TugasController@upload')->name('uploads');
+        Route::post('/save','TugasController@proses_upload')->name('uploads.store');
+
+        //upload 3
+        Route::get('/upload', 'TugasController@index');
+        Route::post('/upload/proses', 'TugasController@store');
 
         // tambahan
         Route::resource('/gelombang', 'GelombangController');

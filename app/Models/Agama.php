@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 class Agama extends Model
 {
     use HasFactory;
-    use SoftDeletes;
+    // use SoftDeletes;
 
     public const ACTIVE = "aktif";
 
@@ -31,5 +31,13 @@ class Agama extends Model
     public function pendaftar()
     {
         return $this->hasMany(Pendaftar::class);
+    }
+    public function Guru()
+    {
+        return $this->hasMany(Guru::class, 'guru');
+    }
+    public function Siswa()
+    {
+        return $this->hasMany(Siswa::class, 'siswa');
     }
 }

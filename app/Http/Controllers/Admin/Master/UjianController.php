@@ -2,79 +2,70 @@
 
 namespace App\Http\Controllers\Admin\Master;
 
-use App\Datatables\Admin\Master\GuruDataTable;
+use App\Datatables\Admin\Master\UjianDataTable;
 use App\Http\Controllers\Controller;
-use App\Models\Agama;
-use App\Models\Guru;
+use App\Models\Ujian;
 use Illuminate\Http\Request;
 
-class GuruController extends Controller
+class UjianController extends Controller
 {
-    public function index(GuruDataTable $dataTable)
+    public function index(UjianDataTable $dataTable)
     {
-        return $dataTable->render('pages.admin.master.guru.index');
+        return $dataTable->render('pages.admin.master.ujian.index');
     }
     public function create()
     {
-        $jenis_agama = Agama::pluck('nama', 'id');
-        return view('pages.admin.master.guru.add-edit', ['jenis_agama'=> $jenis_agama]);
+        return view('pages.admin.master.ujian.add-edit');
     }
     public function store(Request $request)
     {
         try {
             $request->validate([
-                'nama' => 'required|min:3'
+                'judul' => 'required|min:3'
             ]);
         } catch (\Throwable $th) {
             return back()->withInput()->withToastError($th->validator->messages()->all()[0]);
         }
 
         try {
-            Guru::create($request->all());
+            Ujian::create($request->all());
         } catch (\Throwable $th) {
+            dd($th);
             return back()->withInput()->withToastError('Something went wrong');
         }
 
-        return redirect(route('admin.master-data.guru.index'))->withToastSuccess('Data tersimpan');
-    }
-
-    public function show($id)
-    {
-        $data = Guru::findOrFail($id);
-        $jenis_agama= Guru::pluck('nama','id');
-        return view('pages.admin.master.guru.show', ['data' => $data, 'jenis_agama'=> $jenis_agama]);
+        return redirect(route('admin.master-data.ujian.index'))->withToastSuccess('Data tersimpan');
     }
 
     public function edit($id)
     {
-        $data = Guru::findOrFail($id);
-        $jenis_agama= Guru::pluck('nama','id');
-        return view('pages.admin.master.guru.add-edit', ['data' => $data, 'jenis_agama'=> $jenis_agama]);
+        $data = Ujian::findOrFail($id);
+        return view('pages.admin.master.ujian.add-edit', ['data' => $data]);
     }
     public function update(Request $request, $id)
     {
         try {
             $request->validate([
-                'nama' => 'required|min:3'
+                'judul' => 'required|min:3'
             ]);
         } catch (\Throwable $th) {
             return back()->withInput()->withToastError($th->validator->messages()->all()[0]);
         }
 
         try {
-            $data = Guru::findOrFail($id);
+            $data = Ujian::findOrFail($id);
             $data->update($request->all());
         } catch (\Throwable $th) {
             return back()->withInput()->withToastError('Something went wrong');
         }
 
-        return redirect(route('admin.master-data.guru.index'))->withToastSuccess('Data tersimpan');
+        return redirect(route('admin.master-data.ujian.index'))->withToastSuccess('Data tersimpan');
     }
 
     public function destroy($id)
     {
         try {
-            Guru::find($id)->delete();
+            Ujian::find($id)->delete();
         } catch (\Throwable $th) {
             return response(['error' => 'Something went wrong']);
         }

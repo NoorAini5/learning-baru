@@ -1,6 +1,6 @@
 @extends('layouts.default', ['topMenu' => true, 'sidebarHide' => true])
 
-@section('title', isset($data) ? 'Edit Agama' : 'Create Agama' )
+@section('title', isset($data) ? 'Edit Guru' : 'Create Guru' )
 
 @push('css')
 <link href="{{ asset('/assets/plugins/smartwizard/dist/css/smart_wizard.css') }}" rel="stylesheet" />
@@ -43,12 +43,28 @@
         <input type="text" id="nama" name="nama" class="form-control" autofocus data-parsley-required="true" value="{{{ old('nama') ?? ($data['nama'] ?? null) }}}">
       </div>
       <div class="form-group">
+        <label for="name">NIP</label>
+        <input type="text" id="nis" name="nis" class="form-control" autofocus data-parsley-required="true" value="{{{ old('nis') ?? ($data['nis'] ?? null) }}}">
+      </div>
+      <div class="form-group">
+        <label for="name">No Induk</label>
+        <input type="text" id="no_induk" name="no_induk" class="form-control" autofocus data-parsley-required="true" value="{{{ old('no_induk') ?? ($data['no_induk'] ?? null) }}}">
+      </div>
+      <div class="form-group">
+        <label for="name">Tempat Lahir</label>
+        <input type="text" id="tempat_lahir" name="tempat_lahir" class="form-control" autofocus data-parsley-required="true" value="{{{ old('tempat_lahir') ?? ($data['tempat_lahir'] ?? null) }}}">
+      </div>
+      <div class="form-group">
+        <label for="name">Tanggal Lahir</label>
+        <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" autofocus data-parsley-required="true" value="{{{ old('tanggal_lahir') ?? ($data['tanggal_lahir'] ?? null) }}}">
+      </div>
+      <div class="form-group">
         <label for="name">Alamat</label>
-        <input type="text" id="alamat" name="alamat" class="form-control" autofocus data-parsley-required="true" value="{{{ old('alamat') ?? ($data['alamat'] ?? null) }}}">
+        <input type="textarea" id="alamat" name="alamat" class="form-control" autofocus data-parsley-required="true" value="{{{ old('alamat') ?? ($data['alamat'] ?? null) }}}">
       </div>
       <div class="form-group">
         <label for="name">Agama</label>
-        <input type="text" id="agama" name="agama" class="form-control" autofocus data-parsley-required="true" value="{{{ old('agama') ?? ($data['agama'] ?? null) }}}">
+        <x-form.Dropdown name="agama" :options="$jenis_agama" selected="{{{ old('agama') ?? ($data['agama'] ?? null) }}}" required />
       </div>
       <div class="form-group">
         <label for="name">Jenis Kelamin</label>

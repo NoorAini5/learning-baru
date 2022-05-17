@@ -27,5 +27,13 @@ class Mapel extends Model
     {
         return $this->belongsTo(Guru::class, 'guru');
     }
+    public function Materi()
+    {
+        return $this->hasmany(Materi::class, 'materi');
+    }
+    public function Diskusi()
+    {
+        return $this->hasMany(Diskusi::class, 'diskusi');
+    }
 
 }

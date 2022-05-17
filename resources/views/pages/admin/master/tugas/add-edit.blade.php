@@ -1,6 +1,6 @@
 @extends('layouts.default', ['topMenu' => true, 'sidebarHide' => true])
 
-@section('title', isset($data) ? 'Edit Materi' : 'Create Materi' )
+@section('title', isset($data) ? 'Edit Tugas' : 'Create Tugas' )
 
 @push('css')
 <link href="{{ asset('/assets/plugins/smartwizard/dist/css/smart_wizard.css') }}" rel="stylesheet" />
@@ -20,7 +20,7 @@
 
 
 <!-- begin panel -->
-<form action="{{ isset($data) ? route('admin.master-data.materi.update', $data->id) : route('admin.master-data.materi.store') }}" id="form" name="form" method="POST" data-parsley-validate="true">
+<form action="{{ isset($data) ? route('admin.master-data.tugas.update', $data->id) : route('admin.master-data.tugas.store') }}" id="form" name="form" method="POST" data-parsley-validate="true">
   @csrf
   @if(isset($data))
   {{ method_field('PUT') }}
@@ -38,17 +38,21 @@
     <!-- end panel-heading -->
     <!-- begin panel-body -->
     <div class="panel-body">
+
+        <form action="/upload/proses" method="POST" enctype="multipart/form-data">
+            {{ csrf_field() }}
+
       <div class="form-group">
-        <label for="name">Nama</label>
-        <input type="text" id="nama" name="nama" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->nama ?? old('nama') }}}">
+        <label for="name">Judul</label>
+        <input type="text" id="judul" name="judul" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->judul ?? old('judul') }}}">
       </div>
       <div class="form-group">
         <label for="name">Isi</label>
         <input type="text" id="isi" name="isi" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->isi ?? old('isi') }}}">
       </div>
       <div class="form-group">
-        <label for="name">Mata Pelajaran</label>
-        <x-form.Dropdown name="matkul" :options="$jenis_mapel" selected="{{{ old('matkul') ?? ($data['matkul'] ?? null) }}}" required />
+        <label for="name">File Tugas</label>
+        <input type="file" id="file" name="file" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->file ?? old('file') }}}">
       </div>
     </div>
     <!-- end panel-body -->

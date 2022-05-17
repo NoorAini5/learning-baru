@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Master;
 use App\Datatables\Admin\Master\SiswaDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Siswa;
+use App\Models\Agama;
 use Illuminate\Http\Request;
 
 class siswaController extends Controller
@@ -15,7 +16,8 @@ class siswaController extends Controller
     }
     public function create()
     {
-        return view('pages.admin.master.siswa.add-edit');
+        $jenis_agama = Agama::pluck('nama', 'id');
+        return view('pages.admin.master.siswa.add-edit', ['jenis_agama'=> $jenis_agama]);
     }
     public function store(Request $request)
     {
@@ -39,7 +41,8 @@ class siswaController extends Controller
     public function edit($id)
     {
         $data = Siswa::findOrFail($id);
-        return view('pages.admin.master.siswa.add-edit', ['data' => $data]);
+        $jenis_agama= Siswa::pluck('nama','id');
+        return view('pages.admin.master.siswa.add-edit', ['data' => $data, 'jenis_agama'=> $jenis_agama]);
     }
     public function update(Request $request, $id)
     {
@@ -59,6 +62,13 @@ class siswaController extends Controller
         }
 
         return redirect(route('admin.master-data.siswa.index'))->withToastSuccess('Data tersimpan');
+    }
+
+    public function show($id)
+    {
+        $data = Siswa:: with('Agama') -> findOrFail($id);
+        $jenis_agama= Agama::pluck('nama','id');
+        return view('pages.admin.master.siswa.show', ['data' => $data, 'jenis_agama'=> $jenis_agama]);
     }
 
     public function destroy($id)

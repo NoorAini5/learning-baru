@@ -45,7 +45,7 @@ class MapelController extends Controller
         $data = Mapel::findOrFail($id);
         $jenis_kelas= Kelas::pluck('nama','id');
         $jenis_guru= Guru::pluck('nama','id');
-        return view('pages.admin.master.mapel.add-edit', ['data' => $data]);
+        return view('pages.admin.master.mapel.add-edit', ['data' => $data, 'jenis_guru'=> $jenis_guru, 'jenis_kelas'=>$jenis_kelas]);
     }
     public function update(Request $request, $id)
     {

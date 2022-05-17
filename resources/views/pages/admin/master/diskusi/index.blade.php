@@ -1,6 +1,6 @@
 @extends('layouts.default', ['topMenu' => true, 'sidebarHide' => true])
 
-@section('title', 'Admin')
+@section('title', 'Diskusi')
 
 @push('css')
 <!-- datatables -->
@@ -55,8 +55,4 @@
     $('.buttons-reload').trigger('click')
   })
 </script>
-
-
-
-
 @endpush

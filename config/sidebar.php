@@ -31,33 +31,33 @@ return [
         //     'url' => '/admin/admin',
         //     'caret' => false,
         // ],
-        [
-            'icon' => 'fa fa-cogs',
-            'title' => 'Master',
-            'url' => 'javascript:;',
-            'caret' => true,
-            'sub_menu' => [
-                [
-                    'url' => '/admin/setting',
-                    'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;App'
-                ], [
-                    'url' => '/admin/master-data/agama',
-                    'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Agama'
-                ], [
-                    'url' => '/admin/master-data/pekerjaan',
-                    'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Pekerjaan'
-                ], [
-                    'url' => '/admin/master-data/status-kawin',
-                    'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Status Kawin'
-                ], [
-                    'url' => '/admin/master-data/pendidikan',
-                    'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Pendidikan'
-                ]
-            ]
-                ],
+        // [
+        //     'icon' => 'fa fa-cogs',
+        //     'title' => 'Master',
+        //     'url' => 'javascript:;',
+        //     'caret' => true,
+        //     'sub_menu' => [
+        //         [
+        //             'url' => '/admin/setting',
+        //             'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;App'
+        //         ], [
+        //             'url' => '/admin/master-data/agama',
+        //             'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Agama'
+        //         ], [
+        //             'url' => '/admin/master-data/pekerjaan',
+        //             'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Pekerjaan'
+        //         ], [
+        //             'url' => '/admin/master-data/status-kawin',
+        //             'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Status Kawin'
+        //         ], [
+        //             'url' => '/admin/master-data/pendidikan',
+        //             'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Pendidikan'
+        //         ]
+            // ]
+            //     ],
                 [
                     'icon' => 'fa fa-school',
-                    'title' => 'Sekolah',
+                    'title' => 'Master',
                     'url' => 'javascript:;',
                     'caret' => true,
                     'sub_menu' => [
@@ -73,12 +73,66 @@ return [
                         ], [
                             'url' => '/admin/master-data/mapel',
                             'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Mapel'
-                        ],[
-                            'url' => '/admin/master-data/materi',
-                            'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Materi'
                         ]
                     ]
-                ]
+                        ],
+
+                // [
+                //     'icon' => 'fa fa-male',
+                //     'title' => 'Guru',
+                //     'url' => 'javascript:;',
+                //     'url' => '/admin/master-data/guru',
+                //      'title' => 'Guru'
+                // ],
+
+                    // [
+                    //     'icon' => 'fa fa-child',
+                    //     'title' => 'Siswa',
+                    //     'url' => 'javascript:;',
+                    //     'url' => '/admin/master-data/siswa',
+                    //     'title' => 'Siswa'
+
+
+                    // ],
+
+                    // [
+                    //     'icon' => 'fa fa-book',
+                    //     'title' => 'Kelas',
+                    //     'url' => 'javascript:;',
+                    //     'caret' => true,
+                    //     'sub_menu' => [
+                    //         [
+                    //             'url' => '/admin/master-data/mapel',
+                    //             'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Mapel'
+                    //         ],
+                    //     ]
+                    // ],
+
+                    [
+                        'icon' => 'fa fa-book',
+                        'title' => 'Mapel',
+                        'url' => 'javascript:;',
+                        'caret' => true,
+                        'sub_menu' => [
+                            [
+                                'url' => '/admin/master-data/materi',
+                                'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Materi'
+                            ],
+                            [
+                                'url' => '/admin/master-data/diskusi',
+                                'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Diskusi'
+                            ],
+                            [
+                                'url' => '/admin/master-data/tugas',
+                                'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Tugas'
+                            ],
+                            [
+                                'url' => '/admin/master-data/ujian',
+                                'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Ujian'
+                            ],
+                        ]
+                    ]
+
 
     ],
 

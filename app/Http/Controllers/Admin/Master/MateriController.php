@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Master;
 use App\Datatables\Admin\Master\MateriDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Materi;
+use App\Models\Mapel;
 use Illuminate\Http\Request;
 
 class MateriController extends Controller
@@ -15,7 +16,8 @@ class MateriController extends Controller
     }
     public function create()
     {
-        return view('pages.admin.master.materi.add-edit');
+        $jenis_mapel = Mapel::pluck('nama', 'id');
+        return view('pages.admin.master.materi.add-edit', ['jenis_mapel'=> $jenis_mapel]);
     }
     public function store(Request $request)
     {
@@ -30,6 +32,7 @@ class MateriController extends Controller
         try {
             Materi::create($request->all());
         } catch (\Throwable $th) {
+            dd($th);
             return back()->withInput()->withToastError('Something went wrong');
         }
 
@@ -39,7 +42,8 @@ class MateriController extends Controller
     public function edit($id)
     {
         $data = Materi::findOrFail($id);
-        return view('pages.admin.master.materi.add-edit', ['data' => $data]);
+        $jenis_mapel= Mapel::pluck('nama','id');
+        return view('pages.admin.master.materi.add-edit', ['data' => $data, 'jenis_mapel'=> $jenis_mapel]);
     }
     public function update(Request $request, $id)
     {

@@ -44,7 +44,7 @@ class MateriDataTable extends DataTable
      */
     public function query(Materi $model)
     {
-        return $model->newQuery();
+        return $model->select('materis.*')->with(['mapel']);
     }
 
     /**
@@ -84,8 +84,7 @@ class MateriDataTable extends DataTable
                   ->addClass('text-center'),
             Column::make('nama'),
             Column::make('isi'),
-            Column::make('matkul')
-
+            Column::make('matkul')->title('Mata Pelajaran')->data('mapel.nama'),
 
         ];}
 

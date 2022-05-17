@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAgamaTable extends Migration
+class CreateUjiansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateAgamaTable extends Migration
      */
     public function up()
     {
-        Schema::create('agama', function (Blueprint $table) {
+        Schema::create('ujians', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->enum('status', ['aktif', 'non-aktif'])->default('aktif');
-            // $table->softDeletes();
+            $table->string('judul');
+            $table->string('soal');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -28,6 +29,6 @@ class CreateAgamaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agama');
+        Schema::dropIfExists('ujians');
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.default', ['topMenu' => true, 'sidebarHide' => true])
 
-@section('title', isset($data) ? 'Edit Materi' : 'Create Materi' )
+@section('title', isset($data) ? 'Edit Tugas' : 'Create Tugas' )
 
 @push('css')
 <link href="{{ asset('/assets/plugins/smartwizard/dist/css/smart_wizard.css') }}" rel="stylesheet" />
@@ -20,7 +20,7 @@
 
 
 <!-- begin panel -->
-<form action="{{ isset($data) ? route('admin.master-data.materi.update', $data->id) : route('admin.master-data.materi.store') }}" id="form" name="form" method="POST" data-parsley-validate="true">
+<form action="{{ isset($data) ? route(ugas.store') }}" id="form" name="form" method="POST" data-parsley-validate="true">
   @csrf
   @if(isset($data))
   {{ method_field('PUT') }}
@@ -29,7 +29,7 @@
   <div class="panel panel-inverse">
     <!-- begin panel-heading -->
     <div class="panel-heading">
-      <h4 class="panel-title">Form @yield('title')</h4>
+      <h4 class="panel-title">Form @yield('title')</h4>'admin.master-data.tugas.update', $data->id) : route('admin.master-data.t
       <div class="panel-heading-btn">
         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
@@ -38,17 +38,34 @@
     <!-- end panel-heading -->
     <!-- begin panel-body -->
     <div class="panel-body">
+
+        <form action="/upload/proses" method="POST" enctype="multipart/form-data">
+            {{ csrf_field() }}
+
       <div class="form-group">
-        <label for="name">Nama</label>
-        <input type="text" id="nama" name="nama" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->nama ?? old('nama') }}}">
+        <label for="name">Judul</label>
+        <input type="text" id="judul" name="judul" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->judul ?? old('judul') }}}">
       </div>
       <div class="form-group">
         <label for="name">Isi</label>
         <input type="text" id="isi" name="isi" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->isi ?? old('isi') }}}">
       </div>
+      <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                {{-- <img src="{{ asset($data->foto)}}" alt="" srcset=""> --}}
+            </div>
+            {{-- <img src="{{ asset('storage/app/public/foto')$data->foto }}" alt="" srcset=""> --}}
+        </div>
+      @php
+                $imageSrc = null;
+                if(isset($data->dokumen)){
+                $imageSrc = $data->dokumen->toArray();
+                }
+                @endphp
       <div class="form-group">
-        <label for="name">Mata Pelajaran</label>
-        <x-form.Dropdown name="matkul" :options="$jenis_mapel" selected="{{{ old('matkul') ?? ($data['matkul'] ?? null) }}}" required />
+        <label for="name">File Tugas</label>
+        <x-form.ImageUploader :imageSrc="isset($imageSrc) ? asset(DataHelper::filterDokumenData($imageSrc, 'nama', 'file')->first()['public_url']) : null" name="file" title="file" value="{{{ $data->dokumen  ?? old('file') }}}" />
       </div>
     </div>
     <!-- end panel-body -->

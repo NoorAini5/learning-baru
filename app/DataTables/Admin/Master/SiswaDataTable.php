@@ -28,6 +28,7 @@ class SiswaDataTable extends DataTable
                 $btn = '<div class="btn-group">';
                 $btn = $btn . '<a href="' . route('admin.master-data.siswa.edit', $row->id) . '" class="btn btn-dark buttons-edit"><i class="fas fa-edit"></i></a>';
                 $btn = $btn . '<a href="' . route('admin.master-data.siswa.destroy', $row->id) . '" class="btn btn-danger buttons-delete"><i class="fas fa-trash fa-fw"></i></a>';
+                $btn = $btn . '<a href="' . route('admin.master-data.siswa.show', $row->id) . '" class="btn btn-info buttons-show"><i class="fas fa-info fa-fw"></i></a>';
                 $btn = $btn . '</div>';
 
                 return $btn;
@@ -42,7 +43,7 @@ class SiswaDataTable extends DataTable
      */
     public function query(Siswa $model)
     {
-        return $model->newQuery();
+        return $model->select('siswas.*')->with(['agama']);
     }
 
     /**
@@ -82,11 +83,15 @@ class SiswaDataTable extends DataTable
                 ->addClass('text-center'),
                 Column::make('id'),
                 Column::make('nama'),
-                Column::make('alamat'),
-                Column::make('agama'),
-                Column::make('jenis_kelamin'),
-                Column::make('telepon'),
-                Column::make('email'),
+                Column::make('nis'),
+                Column::make('no_induk'),
+                // Column::make('tempat_lahir'),
+                // Column::make('tanggal_lahir'),
+                // Column::make('alamat'),
+                // Column::make('agama')->data('agama.nama'),
+                // Column::make('jenis_kelamin'),
+                // Column::make('telepon'),
+                // Column::make('email'),
         ];
     }
 

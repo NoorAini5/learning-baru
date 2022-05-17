@@ -2,79 +2,76 @@
 
 namespace App\Http\Controllers\Admin\Master;
 
-use App\Datatables\Admin\Master\GuruDataTable;
 use App\Http\Controllers\Controller;
-use App\Models\Agama;
-use App\Models\Guru;
 use Illuminate\Http\Request;
+use App\Models\Diskusi;
+use App\Models\Mapel;
+use App\Datatables\Admin\Master\DiskusiDataTable;
 
-class GuruController extends Controller
+class DiskusiController extends Controller
 {
-    public function index(GuruDataTable $dataTable)
+    public function index(DiskusiDataTable $dataTable)
     {
-        return $dataTable->render('pages.admin.master.guru.index');
+        return $dataTable->render('pages.admin.master.diskusi.index');
     }
+
     public function create()
     {
-        $jenis_agama = Agama::pluck('nama', 'id');
-        return view('pages.admin.master.guru.add-edit', ['jenis_agama'=> $jenis_agama]);
+        $jenis_mapel = Mapel::pluck('nama', 'id');
+        return view('pages.admin.master.diskusi.add-edit', ['jenis_mapel'=> $jenis_mapel]);
     }
+
     public function store(Request $request)
     {
         try {
             $request->validate([
-                'nama' => 'required|min:3'
+                'judul' => 'required|min:2'
             ]);
         } catch (\Throwable $th) {
             return back()->withInput()->withToastError($th->validator->messages()->all()[0]);
         }
 
         try {
-            Guru::create($request->all());
+            Diskusi::create($request->all());
         } catch (\Throwable $th) {
+            dd($th);
             return back()->withInput()->withToastError('Something went wrong');
         }
 
-        return redirect(route('admin.master-data.guru.index'))->withToastSuccess('Data tersimpan');
-    }
-
-    public function show($id)
-    {
-        $data = Guru::findOrFail($id);
-        $jenis_agama= Guru::pluck('nama','id');
-        return view('pages.admin.master.guru.show', ['data' => $data, 'jenis_agama'=> $jenis_agama]);
+        return redirect(route('admin.master-data.diskusi.index'))->withToastSuccess('Data tersimpan');
     }
 
     public function edit($id)
     {
-        $data = Guru::findOrFail($id);
-        $jenis_agama= Guru::pluck('nama','id');
-        return view('pages.admin.master.guru.add-edit', ['data' => $data, 'jenis_agama'=> $jenis_agama]);
+        $data = Diskusi::findOrFail($id);
+        $jenis_mapel= Mapel::pluck('nama','id');
+        return view('pages.admin.master.diskusi.add-edit', ['data' => $data,  'jenis_mapel'=> $jenis_mapel]);
     }
+
     public function update(Request $request, $id)
     {
         try {
             $request->validate([
-                'nama' => 'required|min:3'
+                'judul' => 'required|min:2'
             ]);
         } catch (\Throwable $th) {
             return back()->withInput()->withToastError($th->validator->messages()->all()[0]);
         }
 
         try {
-            $data = Guru::findOrFail($id);
+            $data = Diskusi::findOrFail($id);
             $data->update($request->all());
         } catch (\Throwable $th) {
             return back()->withInput()->withToastError('Something went wrong');
         }
 
-        return redirect(route('admin.master-data.guru.index'))->withToastSuccess('Data tersimpan');
+        return redirect(route('admin.master-data.diskusi.index'))->withToastSuccess('Data tersimpan');
     }
 
     public function destroy($id)
     {
         try {
-            Guru::find($id)->delete();
+            Diskusi::find($id)->delete();
         } catch (\Throwable $th) {
             return response(['error' => 'Something went wrong']);
         }

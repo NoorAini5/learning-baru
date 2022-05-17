@@ -7,19 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
-class Materi extends Model
+
+class Ujian extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
     public const ACTIVE = "aktif";
 
-    protected $table = 'materis';
-    protected $fillable = ['nama','isi','matkul'];
+    protected $table = 'ujians';
+    protected $fillable = ['judul','soal'];
     public $timestamps = false;
 
-    public function mapel()
-    {
-        return $this->belongsTo(Mapel::class, 'matkul');
-    }
+
+
 }

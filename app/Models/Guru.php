@@ -15,11 +15,15 @@ class Guru extends Model
     public const ACTIVE = "aktif";
 
     protected $table = 'gurus';
-    protected $fillable = ['nama','alamat','agama','jenis_kelamin','telepon','email'];
+    protected $fillable = ['nama','nis','no_induk','tempat_lahir','tanggal_lahir','alamat','agama','jenis_kelamin','telepon','email'];
     public $timestamps = false;
 
     public function Mapel()
     {
         return $this->hasMany(Mapel::class);
+    }
+    public function Agama()
+    {
+        return $this->belongsTo(Agama::class, 'agama');
     }
 }
