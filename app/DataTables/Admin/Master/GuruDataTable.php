@@ -86,7 +86,7 @@ class GuruDataTable extends DataTable
                   ->addClass('text-center'),
             Column::make('id'),
             Column::make('nama'),
-            Column::make('nis'),
+            Column::make('nis')->title('NIP'),
             Column::make('no_induk'),
             // Column::make('tempat_lahir'),
             // Column::make('tanggal_lahir'),

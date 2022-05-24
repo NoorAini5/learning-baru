@@ -24,9 +24,6 @@ Route::group(['middleware' => 'auth:web', 'as' => 'user.'], function () {
 
     });
 
-
-    
-    
 });
 
 

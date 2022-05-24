@@ -45,7 +45,7 @@
                     {{ $data['nama'] }}
                 </div>
                 <div class="col-md-1 my-auto">
-                    <label for="nomor_rumah"><strong>NIP</strong></label>
+                    <label for="nomor_rumah"><strong>NISN</strong></label>
                 </div>
                 <div class="col-md-5">
                     {{ $data['nis']  }}
@@ -56,7 +56,7 @@
         <div class="form-group">
             <div class="row">
                 <div class="col-md-1 my-auto">
-                    <label for="alamat"><strong>Nomor Induk</strong></label>
+                    <label for="alamat"><strong>Nomor Induk Siswa</strong></label>
                 </div>
                 <div class="col-md-5">
                     {{ $data['no_induk'] }}
@@ -83,7 +83,7 @@
                     <label for="nomor_rumah"><strong>Alamat</strong></label>
                 </div>
                 <div class="col-md-5">
-                   {{ $data['alamat'] }}
+                  {{ $data['alamat'] }}
                 </div>
             </div>
         </div>

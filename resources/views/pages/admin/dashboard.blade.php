@@ -18,20 +18,22 @@
 <!-- begin page-header -->
 {{-- <h1 class="page-header mb-3">Dashboard v3</h1> --}}
 <!-- end page-header -->
+
+
 <!-- begin daterange-filter -->
-<div class="d-sm-flex align-items-center mb-3">
+{{-- <div class="d-sm-flex align-items-center mb-3">
   <a href="#" class="btn btn-inverse mr-2 text-truncate" id="daterange-filter">
     <i class="fa fa-calendar fa-fw text-white-transparent-5 ml-n1"></i>
     <span>1 Jun 2020 - 7 Jun 2020</span>
     <b class="caret"></b>
   </a>
   <div class="text-muted f-w-600 mt-2 mt-sm-0">compared to <span id="daterange-prev-date">24 Mar-30 Apr 2020</span></div>
-</div>
+</div> --}}
 <!-- end daterange-filter -->
 
 
 <!-- begin widget-todolist -->
-<div class="widget-todolist widget-todolist-rounded">
+{{-- <div class="widget-todolist widget-todolist-rounded">
     <!-- begin widget-todolist-header -->
     <div class="widget-todolist-header">
       <div class="widget-todolist-header-left">
@@ -44,10 +46,11 @@
         </div>
       </div>
     </div>
+</div> --}}
     <!-- end widget-todolist-header -->
 
     <!-- begin widget-todolist-body -->
-    <div class="widget-todolist-body">
+    {{-- <div class="widget-todolist-body">
       <!-- begin widget-todolist-item -->
       <div class="widget-todolist-item">
         <div class="widget-todolist-input">
@@ -76,14 +79,14 @@
         </div>
       </div>
       <!-- end widget-todolist-item -->
-    </div>
+    </div> --}}
     <!-- end widget-todolist-body -->
   </div>
   <!-- end widget-todolist -->
 
 
 <!-- begin timeline -->
-<ul class="timeline">
+{{-- <ul class="timeline">
     <li>
         <!-- begin timeline-time -->
         <div class="timeline-time">
@@ -261,9 +264,58 @@
         </div>
         <!-- begin timeline-body -->
     </li>
-</ul>
+</ul> --}}
 <!-- end timeline -->
+
+
+
+<!-- begin widget-stats Siswa -->
+<div class="row">
+    <div class="col-md-4">
+        <div class="widget widget-stats bg-gradient-red m-b-10">
+            <div class="stats-icon stats-icon-lg"><i class="fa fa-child fa-fw"></i></div>
+            <div class="stats-content">
+              <div class="stats-title">Siswa</div>
+              <div class="stats-number">7,842,900</div>
+              <div class="stats-progress progress">
+                <div class="progress-bar" style="width: 70.1%;"></div>
+              </div>
+              <div class="stats-desc">Better than last week (70.1%)</div>
+            </div>
+          </div>
     </div>
+
+    <div class="col-md-4">
+        <div class="widget widget-stats bg-gradient-teal m-b-10">
+            <div class="stats-icon stats-icon-lg"><i class="fa fa-user fa-fw"></i></div>
+            <div class="stats-content">
+              <div class="stats-title">Guru</div>
+              <div class="stats-number">7,842,900</div>
+              <div class="stats-progress progress">
+                <div class="progress-bar" style="width: 70.1%;"></div>
+              </div>
+              <div class="stats-desc">Better than last week (70.1%)</div>
+            </div>
+          </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="widget widget-stats bg-gradient-yellow m-b-10">
+            <div class="stats-icon stats-icon-lg"><i class="fa fa-book fa-fw"></i></div>
+            <div class="stats-content">
+              <div class="stats-title">Kelas</div>
+              <div class="stats-number">7,842,900</div>
+              <div class="stats-progress progress">
+                <div class="progress-bar" style="width: 70.1%;"></div>
+              </div>
+              <div class="stats-desc">Better than last week (70.1%)</div>
+            </div>
+          </div>
+    </div>
+</div>
+
+  <!-- end widget-stats -->
+
 
 
     <!-- begin scroll to top btn -->

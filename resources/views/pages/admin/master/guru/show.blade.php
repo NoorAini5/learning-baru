@@ -35,7 +35,7 @@
     </div>
     <!-- end panel-heading -->
     <!-- begin panel-body -->
-    <div class="panel-body">
+    {{-- <div class="panel-body">
         <div class="form-group">
             <div class="row">
                 <div class="col-md-1 my-auto">
@@ -162,7 +162,114 @@
             </div>
         </div>
 
+    </div> --}}
+
+    <div class="panel-body">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-1 my-auto">
+                    <label for="alamat"><strong>Nama</strong></label>
+                </div>
+                <div class="col-md-5">
+                    {{ $data['nama'] }}
+                </div>
+                <div class="col-md-1 my-auto">
+                    <label for="nomor_rumah"><strong>NIP</strong></label>
+                </div>
+                <div class="col-md-5">
+                    {{ $data['nis']  }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-1 my-auto">
+                    <label for="alamat"><strong>Nomor Induk</strong></label>
+                </div>
+                <div class="col-md-5">
+                    {{ $data['no_induk'] }}
+
+                </div>
+                <div class="col-md-1 my-auto">
+                    <label for="nomor_rumah"><strong>Tempat Lahir</strong></label>
+                </div>
+                <div class="col-md-5">
+                    {{  $data['tempat_lahir'] }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-1 my-auto">
+                    <label for="alamat"><strong>Tanggal Lahir</strong></label>
+                </div>
+                <div class="col-md-5">
+                    {{ $data['tanggal_lahir'] }}
+                </div>
+                <div class="col-md-1 my-auto">
+                    <label for="nomor_rumah"><strong>Alamat</strong></label>
+                </div>
+                <div class="col-md-5">
+                   {{ $data['alamat'] }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-1 my-auto">
+                    <label for="alamat"><strong>Nomor Induk Pegawai</strong></label>
+                </div>
+                <div class="col-md-5">
+                    {{ $data['no_induk'] }}
+                </div>
+                <div class="col-md-1 my-auto">
+                    <label for="nomor_rumah"><strong>Tempat Lahir</strong></label>
+                </div>
+                <div class="col-md-5">
+                    {{ $data['tempat_lahir'] }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-1 my-auto">
+                    <label for="alamat"><strong>Agama</strong></label>
+                </div>
+                <div class="col-md-5">
+                    {{ $data->Agama->nama }}
+                </div>
+                <div class="col-md-1 my-auto">
+                    <label for="nomor_rumah"><strong>Jenis Kelamin</strong></label>
+                </div>
+                <div class="col-md-5">
+                    {{ $data['jenis_kelamin'] }}
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-1 my-auto">
+                    <label for="alamat"><strong>Telepon</strong></label>
+                </div>
+                <div class="col-md-5">
+                    {{ $data['telepon'] }}
+                </div>
+                <div class="col-md-1 my-auto">
+                    <label for="nomor_rumah"><strong>E-Mail</strong></label>
+                </div>
+                <div class="col-md-5">
+                    {{ $data['email'] }}
+                </div>
+            </div>
+        </div>
+
     </div>
+
     <!-- end panel-body -->
     <!-- begin panel-footer -->
     {{-- <div class="panel-footer">

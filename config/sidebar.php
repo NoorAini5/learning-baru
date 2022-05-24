@@ -129,7 +129,7 @@ return [
                             [
                                 'url' => '/admin/master-data/ujian',
                                 'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Ujian'
-                            ],
+                        ],
                         ]
                     ]
 
