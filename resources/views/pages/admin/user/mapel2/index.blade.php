@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    {{-- @extends('layouts.user') --}}
     <meta charset="utf-8">
     <title>eLEARNING - eLearning HTML Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -38,32 +37,32 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
-                <h1 class="mb-5">Popular Courses</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">Mapels</h6>
+                <h1 class="mb-5">Mata Pelajaran</h1>
             </div>
-
             <div class="row g-4 justify-content-center">
                 <div class="row">
-                    @foreach ($mapels as $mapel )
-                    <div class=" col-md-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <a href="mapel2">
-                        <div class="course-item bg-light">
-                            <div class="position-relative overflow-hidden">
-                                <img class="img-fluid" src="img/course-1.jpg" alt="">
-                            </div>
-                            <div class="text-center p-4 pb-0">
-                                <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.1s">
-                                <h3 class="nav-item nav-link">Kelas {{ $mapel->nama }} </h3>
+                    <div class="row g-4 justify-content-center">
+                        <div class="row">
+                            @foreach ($mapels as $mapel )
+                            <div class=" col-md-3 wow fadeInUp" data-wow-delay="0.1s">
+                                <a href="mapel2">
+                                <div class="course-item bg-light">
+                                    <div class="position-relative overflow-hidden">
+                                        <img class="img-fluid" src="img/course-1.jpg" alt="">
+                                    </div>
+                                    <div class="text-center p-4 pb-0">
+                                        <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.1s">
+                                        <h3 class="nav-item nav-link">{{ $mapel->nama }} </h3>
+                                        </div>
+                                    </div>
                                 </div>
+                            </a>
                             </div>
+                            @endforeach
                         </div>
-                    </a>
                     </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -77,43 +76,5 @@
 
 
 </body>
-
-
-{{--
-<body>
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
-                <h1 class="mb-5">Popular Courses</h1>
-            </div>
-            @foreach ($mapels as $mapel )
-    <div class="row">
-    <div class="col-md-4">
-        <h3 class="mb-0">Kelas {{ $mapel->nama }} </h3>
-    </div>
-    </div>
-
-
-            @endforeach
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/lib/wow/wow.min.js"></script>
-    <script src="assets/lib/easing/easing.min.js"></script>
-    <script src="assets/lib/waypoints/waypoints.min.js"></script>
-    <script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="assets/js/main.js"></script>
-
-
-</body> --}}
-
-
-
-
-
-
 </html>
 

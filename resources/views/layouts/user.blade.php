@@ -2,55 +2,33 @@
 <html lang="{{ app()->getLocale() }}">
 
 <head>
-	@include('includes.head')
+	{{-- @include('includes.head') --}}
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>eLEARNING</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="" class="nav-item nav-link">About</a>
+                <a href="mapel" class="nav-item nav-link">Courses</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="404.html" class="dropdown-item">404 Page</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            {{-- <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a> --}}
+        </div>
+    </nav>
 </head>
-@php
-$bodyClass = (!empty($boxedLayout)) ? 'boxed-layout' : '';
-$bodyClass .= (!empty($paceTop)) ? 'pace-top ' : '';
-$bodyClass .= (!empty($bodyExtraClass)) ? $bodyExtraClass . ' ' : '';
-$sidebarHide = (!empty($sidebarHide)) ? $sidebarHide : '';
-$sidebarTwo = (!empty($sidebarTwo)) ? $sidebarTwo : '';
-$sidebarSearch = (!empty($sidebarSearch)) ? $sidebarSearch : '';
-$topMenu = (!empty($topMenu)) ? $topMenu : '';
-$footer = (!empty($footer)) ? $footer : '';
 
-$pageContainerClass = (!empty($topMenu)) ? 'page-with-top-menu ' : '';
-$pageContainerClass .= (!empty($sidebarRight)) ? 'page-with-right-sidebar ' : '';
-$pageContainerClass .= (!empty($sidebarLight)) ? 'page-with-light-sidebar ' : '';
-$pageContainerClass .= (!empty($sidebarWide)) ? 'page-with-wide-sidebar ' : '';
-$pageContainerClass .= (!empty($sidebarHide)) ? 'page-without-sidebar ' : '';
-$pageContainerClass .= (!empty($sidebarMinified)) ? 'page-sidebar-minified ' : '';
-$pageContainerClass .= (!empty($sidebarTwo)) ? 'page-with-two-sidebar ' : '';
-$pageContainerClass .= (!empty($contentFullHeight)) ? 'page-content-full-height ' : '';
-
-$contentClass = (!empty($contentFullWidth) || !empty($contentFullHeight)) ? 'content-full-width ' : '';
-$contentClass .= (!empty($contentInverseMode)) ? 'content-inverse-mode ' : '';
-@endphp
-
-<body class="{{ $bodyClass }}">
-	@include('includes.component.page-loader')
-
-	<div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed {{ $pageContainerClass }}">
-
-		@include('includes.header')
-
-		@includeWhen($topMenu, 'includes.top-menu')
-
-		@includeWhen(!$sidebarHide, 'includes.sidebar-user')
-
-		@includeWhen($sidebarTwo, 'includes.sidebar-right')
-
-		<div id="content" class="content {{ $contentClass }}">
-			@yield('content')
-		</div>
-
-		@includeWhen($footer, 'includes.footer')
-
-		@include('includes.component.scroll-top-btn')
-
-	</div>
-
-	@include('includes.page-js')
-</body>
 
 </html>

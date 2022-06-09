@@ -5,9 +5,9 @@ namespace App\Http\Controllers\user\siswa;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Kelas;
+use App\Models\Mapel;
 
-
-class MapelController extends Controller
+class Mapel2Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,10 @@ class MapelController extends Controller
      */
     public function index()
     {
-       $mapels=Kelas::get();
-        return view('pages.admin.user.mapel.index',['mapels' => $mapels]);
+       $mapels=Mapel::get();
+    // $mapels=Mapel::where(auth()->user()->id);
+    // $mapels= Mapel::where('createable_id', auth()->user()->id)->first();
+    return view('pages.admin.user.mapel2.index',['mapels' => $mapels]);
     }
 
     /**
