@@ -22,6 +22,23 @@ class TugasController extends Controller
 
     public function store(Request $request)
     {
+        // $request->validate([
+        //     'filename' => 'required',
+        //     'filename.*' => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png|max:2000'
+        // ]);
+        // if ($request->hasfile('filename')) {
+        //     $filename = round(microtime(true) * 1000).'-'.str_replace(' ','-',$request->file('filename')->getClientOriginalName());
+        //     $request->file('filename')->move(public_path('file'), $filename);
+        //      Tugas::create(
+        //             [
+        //                 'file' =>$filename
+        //             ]
+        //         );
+        //     echo'Success';
+        // }else{
+        //     echo'Gagal';
+        // }
+
         try {
             $request->validate([
                 'judul' => 'required|min:2'
@@ -85,22 +102,22 @@ class TugasController extends Controller
 
     public function proses_upload(Request $request)
     {
-        $request->validate([
-            'filename' => 'required',
-            'filename.*' => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png|max:2000'
-        ]);
-        if ($request->hasfile('filename')) {
-            $filename = round(microtime(true) * 1000).'-'.str_replace(' ','-',$request->file('filename')->getClientOriginalName());
-            $request->file('filename')->move(public_path('images'), $filename);
-             Tugas::create(
-                    [
-                        'file' =>$filename
-                    ]
-                );
-            echo'Success';
-        }else{
-            echo'Gagal';
-        }
+        // $request->validate([
+        //     'filename' => 'required',
+        //     'filename.*' => 'mimes:doc,docx,PDF,pdf,jpg,jpeg,png|max:2000'
+        // ]);
+        // if ($request->hasfile('filename')) {
+        //     $filename = round(microtime(true) * 1000).'-'.str_replace(' ','-',$request->file('filename')->getClientOriginalName());
+        //     $request->file('filename')->move(public_path('file'), $filename);
+        //      Tugas::create(
+        //             [
+        //                 'file' =>$filename
+        //             ]
+        //         );
+        //     echo'Success';
+        // }else{
+        //     echo'Gagal';
+        // }
 
     }
 }

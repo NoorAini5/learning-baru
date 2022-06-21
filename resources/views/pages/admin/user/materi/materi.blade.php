@@ -38,7 +38,7 @@
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Mapels</h6>
-                <h1 class="mb-5">Mata Pelajaran</h1>
+                <h1 class="mb-5">Materi</h1>
             </div>
             <div class="row g-4 justify-content-center">
                 <div class="row">
@@ -46,9 +46,7 @@
                         <div class="row">
                             @foreach ($mapels as $mapel )
                             <div class=" col-md-3 wow fadeInUp" data-wow-delay="0.1s">
-                                <a href="{{ route('user.mapel2.show', $mapel->id) }}">
-                                    {{-- <a href='materi'> --}}
-                                        {{-- <a href="{{ route('materi') }}"> --}}
+                                <a href="{{ route('user.materi.show', $mapel->id) }}">
                                 <div class="course-item bg-light">
                                     <div class="position-relative overflow-hidden">
                                         <img class="img-fluid" src="img/course-1.jpg" alt="">
@@ -57,7 +55,8 @@
                                         <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.1s">
                                         <h3 class="nav-item nav-link">{{ $mapel->nama }} </h3>
                                         </div>
-
+                                        <div id="container-inputnilai" class="row">
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -65,6 +64,36 @@
                             @endforeach
                         </div>
                     </div>
+                </div>
+            </div>
+
+           {{-- <div class="row g-4 justify-content-center">
+                <div class="row">
+                    <div class="row g-4 justify-content-center">
+                        <div class="row">
+                            <div class=" col-md-3 wow fadeInUp" data-wow-delay="0.1s">
+                                <a href="{{ route('user.mapel2.show', $mapel->id) }}">
+                                    <a href='materi' >
+                                    <div class="course-item bg-light">
+                                        <div class="position-relative overflow-hidden">
+                                            <img class="img-fluid" src="img/course-1.jpg" alt="">
+                                        </div>
+                                        <div class="text-center p-4 pb-0">
+                                            <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.1s">
+                                            <h3 class="nav-item nav-link">DETAIL MATERI </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+
+
+            </div>
+
+
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

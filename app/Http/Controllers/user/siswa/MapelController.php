@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\user\siswa;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Kelas;
+use App\Models\Mapel;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 
 class MapelController extends Controller
@@ -49,6 +50,9 @@ class MapelController extends Controller
      */
     public function show($id)
     {
+        $mapels=Mapel::where('kelas_id', $id)->get();
+        // dd($mapels);
+        return view('pages.admin.user.mapel2.index',['mapels' => $mapels]);
 
     }
 

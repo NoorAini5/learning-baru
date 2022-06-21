@@ -3,23 +3,19 @@
 namespace App\Http\Controllers\user\siswa;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Kelas;
-use App\Models\Mapel;
 use App\Models\Materi;
+use Illuminate\Http\Request;
 
-class Mapel2Controller extends Controller
+class MateriController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-
-        //  $mapels=Mapel::where('kelas_id', $id)->get();
-        return view('pages.admin.user.mapel2.index');
+        return view('pages.admin.user.materi.index');
     }
 
     /**
@@ -51,14 +47,8 @@ class Mapel2Controller extends Controller
      */
     public function show($id)
     {
-        // $mapels=Materi::where('matkul', $id)->get();
-        // return view('pages.admin.user.mapel2.index',['mapels' => $mapels]);
-
-        return view('pages.admin.user.materi.index');
-
-
-        // $mapels=Materi::where('matkul', $id)->get();
-        // return view('pages.admin.user.materi.index',['mapels' => $mapels]);
+        // $mapels=Materi::get();
+        // return view('pages.admin.user.materi.materi',['mapels' => $mapels]);
     }
 
     /**
@@ -79,7 +69,7 @@ class Mapel2Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update(Request $request, $id)
     {
         //
     }
@@ -94,9 +84,4 @@ class Mapel2Controller extends Controller
     {
         //
     }
-
 }
-
-
-
-

@@ -46,9 +46,9 @@
                 <div class="row">
                     @foreach ($mapels as $mapel )
                     <div class=" col-md-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <a href="mapel2">
-                        <div class="course-item bg-light">
-                            <div class="position-relative overflow-hidden">
+                        <a href="{{ route('user.mapel.show', $mapel->id) }}">
+                            <div class="course-item bg-light">
+                             <div class="position-relative overflow-hidden">
                                 <img class="img-fluid" src="img/course-1.jpg" alt="">
                             </div>
                             <div class="text-center p-4 pb-0">
@@ -56,8 +56,8 @@
                                 <h3 class="nav-item nav-link">Kelas {{ $mapel->nama }} </h3>
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                            </div>
+                        </a>
                     </div>
                     @endforeach
                 </div>

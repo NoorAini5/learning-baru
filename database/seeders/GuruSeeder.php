@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Guru;
 
 class GuruSeeder extends Seeder
 {
@@ -13,6 +14,11 @@ class GuruSeeder extends Seeder
      */
     public function run()
     {
-        //
+       $namas= ['neni','tika'];
+
+       foreach($namas as $nama) : Guru::firstOrCreate(['nama'=> $nama]);
+    endforeach;
+
     }
+
 }
