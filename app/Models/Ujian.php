@@ -16,9 +16,12 @@ class Ujian extends Model
     public const ACTIVE = "aktif";
 
     protected $table = 'ujians';
-    protected $fillable = ['judul','soal'];
+    protected $fillable = ['judul','soal','mapel'];
     public $timestamps = false;
 
-
+    public function mapel()
+    {
+        return $this->belongsTo(Mapel::class, 'mapel');
+    }
 
 }

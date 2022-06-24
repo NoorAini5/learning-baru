@@ -21,20 +21,36 @@ class MateriController extends Controller
     }
     public function store(Request $request)
     {
-        try {
-            $request->validate([
-                'nama' => 'required|min:3'
-            ]);
-        } catch (\Throwable $th) {
-            return back()->withInput()->withToastError($th->validator->messages()->all()[0]);
-        }
+        // dd($request->all());
+// upload file
+            $file = $request->file('nama_file');
+            $nama_file = $file->getClientOriginalName();
+            $file->move('materi', $nama_file);
+            $validatedData['nama_file'] = $nama_file;
+            $validatedData['isi'] = $request->isi;
+            $validatedData['matkul'] = $request->matkul;
+            $validatedData['nama'] = $request->nama;
 
-        try {
-            Materi::create($request->all());
-        } catch (\Throwable $th) {
-            dd($th);
-            return back()->withInput()->withToastError('Something went wrong');
-        }
+
+            //upload video
+
+            if ($request->file('video')){
+                $file = $request->file('video');
+                $video = $file->getClientOriginalName();
+                $file->move('video', $video);
+                $validatedData['video'] = $video;
+            }
+
+            // $file = $request->file('video');
+            // $video = $file->getClientOriginalName();
+            // $file->move('video', $video);
+            // $validatedData['video'] = $video;
+            // $validatedData['isi'] = $request->isi;
+            // $validatedData['matkul'] = $request->matkul;
+            // $validatedData['nama'] = $request->nama;
+
+
+            Materi::create($validatedData);
 
         return redirect(route('admin.master-data.materi.index'))->withToastSuccess('Data tersimpan');
     }
@@ -45,6 +61,7 @@ class MateriController extends Controller
         $jenis_mapel= Mapel::pluck('nama','id');
         return view('pages.admin.master.materi.add-edit', ['data' => $data, 'jenis_mapel'=> $jenis_mapel]);
     }
+
     public function update(Request $request, $id)
     {
         try {

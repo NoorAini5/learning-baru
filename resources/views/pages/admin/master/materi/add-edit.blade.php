@@ -20,7 +20,7 @@
 
 
 <!-- begin panel -->
-<form action="{{ isset($data) ? route('admin.master-data.materi.update', $data->id) : route('admin.master-data.materi.store') }}" id="form" name="form" method="POST" data-parsley-validate="true">
+<form action="{{ isset($data) ? route('admin.master-data.materi.update', $data->id) : route('admin.master-data.materi.store') }}" id="form" name="form" method="POST" enctype="multipart/form-data" data-parsley-validate="true">
   @csrf
   @if(isset($data))
   {{ method_field('PUT') }}
@@ -45,6 +45,14 @@
       <div class="form-group">
         <label for="name">Isi</label>
         <input type="text" id="isi" name="isi" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->isi ?? old('isi') }}}">
+      </div>
+      <div class="form-group">
+        <label for="name">Files</label>
+        <input type="file" id="nama_file" name="nama_file" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->nama_file ?? old('nama_file') }}}">
+      </div>
+      <div class="form-group">
+        <label for="name">Video</label>
+        <input type="file" id="video" name="video" class="form-control" value="{{{ $data->video ?? old('video') }}}">
       </div>
       <div class="form-group">
         <label for="name">Mata Pelajaran</label>

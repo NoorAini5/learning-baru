@@ -44,7 +44,7 @@ class TugasDataTable extends DataTable
      */
     public function query(Tugas $model)
     {
-        return $model->select('tugas.*');
+        return $model->select('tugas.*')->with(['mapel']);
     }
 
     /**
@@ -85,7 +85,8 @@ class TugasDataTable extends DataTable
             //Column::make('id'),
             Column::make('judul'),
             Column::make('isi'),
-            Column::make('file')->title('File'),
+            Column::make('nama_file')->title('File'),
+            Column::make('mapel')->title('Mata Pelajaran')->data('mapel.nama'),
         ];
     }
 

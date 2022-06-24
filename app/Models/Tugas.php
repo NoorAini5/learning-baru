@@ -16,9 +16,12 @@ class Tugas extends Model
     public const ACTIVE = "aktif";
 
     protected $table = 'tugas';
-    protected $fillable = ['judul','isi','file'];
+    protected $fillable = ['judul','isi','nama_file','mapel'];
     public $timestamps = false;
 
-
+    public function mapel()
+    {
+        return $this->belongsTo(Mapel::class, 'mapel');
+    }
 
 }

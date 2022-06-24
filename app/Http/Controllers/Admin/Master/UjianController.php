@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin\Master;
 
-use App\Datatables\Admin\Master\UjianDataTable;
-use App\Http\Controllers\Controller;
+use App\Models\Mapel;
 use App\Models\Ujian;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Datatables\Admin\Master\UjianDataTable;
 
 class UjianController extends Controller
 {
@@ -15,7 +16,8 @@ class UjianController extends Controller
     }
     public function create()
     {
-        return view('pages.admin.master.ujian.add-edit');
+        $jenis_mapel = Mapel::pluck('nama', 'id');
+        return view('pages.admin.master.ujian.add-edit',['jenis_mapel'=>$jenis_mapel]);
     }
     public function store(Request $request)
     {
@@ -40,7 +42,8 @@ class UjianController extends Controller
     public function edit($id)
     {
         $data = Ujian::findOrFail($id);
-        return view('pages.admin.master.ujian.add-edit', ['data' => $data]);
+        $jenis_mapel= Mapel::pluck('nama','id');
+        return view('pages.admin.master.ujian.add-edit', ['data' => $data, 'jenis_mapel'=>$jenis_mapel]);
     }
     public function update(Request $request, $id)
     {

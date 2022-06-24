@@ -85,8 +85,8 @@ class MapelDataTable extends DataTable
                   ->addClass('text-center'),
             Column::make('nama'),
             Column::make('kelas')->data('kelas.nama'),
-            Column::make('guru')->data('guru.nama')
-
+            Column::make('guru')->data('guru.nama'),
+            Column::make('deskripsi'),
 
         ];}
 

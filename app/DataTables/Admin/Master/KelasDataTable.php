@@ -84,6 +84,7 @@ class KelasDataTable extends DataTable
                   ->addClass('text-center'),
             //Column::make('id'),
             Column::make('nama'),
+            Column::make('deskripsi'),
         ];
     }
 

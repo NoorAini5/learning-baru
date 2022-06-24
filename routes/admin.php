@@ -48,6 +48,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             Route::resource('diskusi', 'DiskusiController');
             Route::resource('tugas', 'TugasController');
             Route::resource('ujian', 'UjianController');
+            Route::resource('fakultas', 'FakultasController');
+            Route::resource('jurusan', 'JurusanController');
         });
 
         // //upload

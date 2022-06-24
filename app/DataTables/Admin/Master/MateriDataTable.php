@@ -84,6 +84,8 @@ class MateriDataTable extends DataTable
                   ->addClass('text-center'),
             Column::make('nama'),
             Column::make('isi'),
+            Column::make('nama_file'),
+            Column::make('video'),
             Column::make('matkul')->title('Mata Pelajaran')->data('mapel.nama'),
 
         ];}

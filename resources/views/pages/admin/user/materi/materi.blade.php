@@ -37,29 +37,39 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Mapels</h6>
-                <h1 class="mb-5">Materi</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">MATERI</h6>
+                <h1 class="mb-5">Ini Materinya</h1>
             </div>
             <div class="row g-4 justify-content-center">
                 <div class="row">
                     <div class="row g-4 justify-content-center">
                         <div class="row">
-                            @foreach ($mapels as $mapel )
-                            <div class=" col-md-3 wow fadeInUp" data-wow-delay="0.1s">
-                                <a href="{{ route('user.materi.show', $mapel->id) }}">
+                            @foreach ($materis as $materi )
+                            <div class=" col-md-10 wow fadeInUp" data-wow-delay="0.1s">
+                                {{-- <a href="{{ route('user.materi.show', $materi->id) }}"> --}}
                                 <div class="course-item bg-light">
                                     <div class="position-relative overflow-hidden">
                                         <img class="img-fluid" src="img/course-1.jpg" alt="">
                                     </div>
                                     <div class="text-center p-4 pb-0">
-                                        <div class="col-lg-2 col-md-3 wow fadeInUp" data-wow-delay="0.1s">
-                                        <h3 class="nav-item nav-link">{{ $mapel->nama }} </h3>
+                                        <div class="col-lg-6 col-md-3 wow fadeInUp" data-wow-delay="0.1s">
+                                            <h3 class="nav-item "> {{ $materi->nama }}</h3>
+                                            <h3 class="nav-item "> {{ $materi->isi }}</h3>
+                                            {{-- nampilin file --}}
+                                            <h3><a href="/downloadMateri/{{ $materi->nama_file }}">{{ $materi->nama_file }}</a></h3>
+                                            {{-- nampilin video --}}
+                                            @isset($materi->video)
+                                            <video width="50%" max-width="150" height="auto" controls>
+                                                <source src="{{ asset('/video/'.$materi->video) }}">
+                                                Your browser does not support the video tag.
+                                            </video>
+                                            @endisset
                                         </div>
                                         <div id="container-inputnilai" class="row">
                                         </div>
                                     </div>
                                 </div>
-                            </a>
+                            {{-- </a> --}}
                             </div>
                             @endforeach
                         </div>

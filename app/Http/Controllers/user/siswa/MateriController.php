@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user\siswa;
 use App\Http\Controllers\Controller;
 use App\Models\Materi;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class MateriController extends Controller
 {
@@ -15,7 +16,11 @@ class MateriController extends Controller
      */
     public function index()
     {
-        return view('pages.admin.user.materi.index');
+
+        // return view('pages.admin.user.materi.materi');
+
+        $materii=Materi::get();
+        return view('pages.admin.user.materi.materi',['materii' => $materii]);
     }
 
     /**
@@ -47,8 +52,11 @@ class MateriController extends Controller
      */
     public function show($id)
     {
-        // $mapels=Materi::get();
-        // return view('pages.admin.user.materi.materi',['mapels' => $mapels]);
+        // $id_mapel=$id;
+        // dd($id_mapel);
+        $materis=Materi::where('matkul', $id)->get();
+        // dd($materis);
+        return view('pages.admin.user.materi.materi',['materis' => $materis]);
     }
 
     /**
@@ -83,5 +91,15 @@ class MateriController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function downloadMateri($nama_materi){
+        $filepath = public_path('materi' . '/' . $nama_materi);
+        return Response()->download($filepath);
+    }
+
+    public function downloadVideo($video){
+        $filepath = public_path('video' . '/' . $video);
+        return Response()->download($filepath);
     }
 }

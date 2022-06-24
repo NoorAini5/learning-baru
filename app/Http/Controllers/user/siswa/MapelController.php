@@ -17,8 +17,8 @@ class MapelController extends Controller
      */
     public function index()
     {
-       $mapels=Kelas::get();
-        return view('pages.admin.user.mapel.index',['mapels' => $mapels]);
+       $kelas=Kelas::get();
+        return view('pages.admin.user.mapel.index',['kelas' => $kelas]);
     }
 
     /**
@@ -50,9 +50,9 @@ class MapelController extends Controller
      */
     public function show($id)
     {
-        $mapels=Mapel::where('kelas_id', $id)->get();
+        $mapel2=Mapel::where('kelas_id', $id)->get();
         // dd($mapels);
-        return view('pages.admin.user.mapel2.index',['mapels' => $mapels]);
+        return view('pages.admin.user.mapel2.index',['mapel2' => $mapel2]);
 
     }
 

@@ -17,6 +17,8 @@ class CreateMaterisTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('isi');
+            $table->string('nama_file');
+            $table->string('video')->nullable();
             $table->string('matkul');
             $table->timestamps();
             $table->softDeletes();

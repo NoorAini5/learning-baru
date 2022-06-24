@@ -16,7 +16,7 @@ class Mapel extends Model
     public const ACTIVE = "aktif";
 
     protected $table = 'mapels';
-    protected $fillable = ['nama','kelas_id','guru'];
+    protected $fillable = ['nama','kelas_id','guru','deskripsi'];
     public $timestamps = false;
 
     public function Kelas()
@@ -30,6 +30,14 @@ class Mapel extends Model
     public function Materi()
     {
         return $this->hasmany(Materi::class, 'materi');
+    }
+    public function Tugas()
+    {
+        return $this->hasmany(Tugas::class, 'tugas');
+    }
+    public function Ujian()
+    {
+        return $this->hasmany(Ujian::class, 'ujian');
     }
     public function Diskusi()
     {

@@ -46,6 +46,10 @@
         <label for="name">Soal</label>
         <input type="text" id="soal" name="soal" class="form-control" autofocus data-parsley-required="true" value="{{{ old('soal') ?? ($data['soal'] ?? null) }}}">
       </div>
+      <div class="form-group">
+        <label for="name">Mata Pelajaran</label>
+        <x-form.Dropdown name="mapel" :options="$jenis_mapel" selected="{{{ old('mapel') ?? ($data['mapel'] ?? null) }}}" required />
+      </div>
     </div>
     <!-- end panel-body -->
     <!-- begin panel-footer -->

@@ -25,6 +25,7 @@ class CreateSiswasTable extends Migration
             $table->string('jenis_kelamin');
             $table->string('telepon');
             $table->string('email');
+            $table->string('foto');
             $table->timestamps();
             $table->softDeletes();
         });

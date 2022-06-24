@@ -20,7 +20,9 @@
 
 
 <!-- begin panel -->
-<form action="{{ isset($data) ? route('admin.master-data.siswa.update', $data->id) : route('admin.master-data.siswa.store') }}" id="form" name="form" method="POST" data-parsley-validate="true">
+
+    <form action="{{ isset($data) ? route('admin.master-data.siswa.update', $data->id) : route('admin.master-data.siswa.store') }}" id="form" name="form" method="POST" enctype="multipart/form-data" data-parsley-validate="true">
+
   @csrf
   @if(isset($data))
   {{ method_field('PUT') }}
@@ -43,7 +45,7 @@
           <input type="text" id="nama" name="nama" class="form-control" autofocus data-parsley-required="true" value="{{{ old('nama') ?? ($data['nama'] ?? null) }}}">
         </div>
         <div class="form-group">
-            <label for="name">NIP</label>
+            <label for="name">NIS</label>
             <input type="text" id="nis" name="nis" class="form-control" autofocus data-parsley-required="true" value="{{{ old('nis') ?? ($data['nis'] ?? null) }}}">
           </div>
           <div class="form-group">
@@ -80,6 +82,10 @@
           <label for="name">Email</label>
           <input type="text" id="email" name="email" class="form-control" autofocus data-parsley-required="true" value="{{{ old('email') ?? ($data['email'] ?? null) }}}">
         </div>
+        <div class="form-group">
+            <label for="name">Foto</label>
+            <input type="file" id="foto" name="foto" class="form-control" autofocus data-parsley-required="true" value="{{{ old('foto') ?? ($data['foto'] ?? null) }}}">
+          </div>
       </div>
     <!-- end panel-body -->
     <!-- begin panel-footer -->

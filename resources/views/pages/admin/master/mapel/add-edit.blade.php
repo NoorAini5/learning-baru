@@ -50,6 +50,10 @@
         <label for="name">Guru</label>
         <x-form.Dropdown name="guru" :options="$jenis_guru" selected="{{{ old('guru') ?? ($data['guru'] ?? null) }}}" required />
       </div>
+      <div class="form-group">
+        <label for="name">Deskripsi</label>
+        <input type="text" id="deskripsi" name="deskripsi" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->deskripsi ?? old('deskripsi') }}}">
+      </div>
     </div>
     <!-- end panel-body -->
     <!-- begin panel-footer -->

@@ -17,7 +17,8 @@ class CreateTugasTable extends Migration
             $table->id();
             $table->string('judul');
             $table->string('isi');
-            $table->string('file');
+            $table->string('nama_file');
+            $table->string('mapel');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -67,13 +67,21 @@ return [
                         ],[
                             'url' => '/admin/master-data/siswa',
                             'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Siswa'
-                        ], [
+                        ],  [
+                            'url' => '/admin/master-data/fakultas',
+                            'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Fakultas'
+                        ],  [
+                            'url' => '/admin/master-data/jurusan',
+                            'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Jurusan'
+                        ],[
                             'url' => '/admin/master-data/kelas',
                             'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Kelas'
                         ], [
                             'url' => '/admin/master-data/mapel',
                             'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Mapel'
-                        ]
+                        ],
+
+
                     ]
                         ],
 

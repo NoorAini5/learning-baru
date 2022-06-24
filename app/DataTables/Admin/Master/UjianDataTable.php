@@ -33,7 +33,6 @@ class UjianDataTable extends DataTable
 
                 return $btn;
             });
-
     }
 
     /**
@@ -44,7 +43,7 @@ class UjianDataTable extends DataTable
      */
     public function query(Ujian $model)
     {
-        return $model->newQuery();
+        return $model->select('ujians.*')->with(['mapel']);
     }
 
     /**
@@ -85,7 +84,7 @@ class UjianDataTable extends DataTable
             Column::make('id'),
             Column::make('judul'),
             Column::make('soal'),
-
+            Column::make('mapel')->title('Mata Pelajaran')->data('mapel.nama'),
         ];
     }
 

@@ -18,8 +18,8 @@ class Mapel2Controller extends Controller
     public function index($id)
     {
 
-        //  $mapels=Mapel::where('kelas_id', $id)->get();
-        return view('pages.admin.user.mapel2.index');
+        //  $mapels=Mapel::where('matkul', $id)->get();
+        return view('pages.admin.user.materi.show');
     }
 
     /**
@@ -51,14 +51,11 @@ class Mapel2Controller extends Controller
      */
     public function show($id)
     {
-        // $mapels=Materi::where('matkul', $id)->get();
-        // return view('pages.admin.user.mapel2.index',['mapels' => $mapels]);
 
-        return view('pages.admin.user.materi.index');
+        $id_mapel=$id;
+        // dd($mapels);
+        return view('pages.admin.user.materi.index',['id_mapel' => $id_mapel]);
 
-
-        // $mapels=Materi::where('matkul', $id)->get();
-        // return view('pages.admin.user.materi.index',['mapels' => $mapels]);
     }
 
     /**
@@ -93,6 +90,13 @@ class Mapel2Controller extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function tampildiskusi($id)
+    {
+        $id_diskusi=$id;
+        // dd($mapels);
+        return view('pages.admin.user.materi.index',['id_diskusi' => $id_diskusi]);
     }
 
 }

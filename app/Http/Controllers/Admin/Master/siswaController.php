@@ -20,20 +20,35 @@ class siswaController extends Controller
         return view('pages.admin.master.siswa.add-edit', ['jenis_agama'=> $jenis_agama]);
     }
     public function store(Request $request)
-    {
-        try {
-            $request->validate([
-                'nama' => 'required|min:3'
-            ]);
-        } catch (\Throwable $th) {
-            return back()->withInput()->withToastError($th->validator->messages()->all()[0]);
-        }
+    // {
+    //     try {
+    //         $request->validate([
+    //             'nama' => 'required|min:3'
+    //         ]);
+    //     } catch (\Throwable $th) {
+    //         return back()->withInput()->withToastError($th->validator->messages()->all()[0]);
+    //     }
 
-        try {
-            Siswa::create($request->all());
-        } catch (\Throwable $th) {
-            return back()->withInput()->withToastError('Something went wrong');
-        }
+    //     try {
+    //         Siswa::create($request->all());
+    //     } catch (\Throwable $th) {
+    //         return back()->withInput()->withToastError('Something went wrong');
+    //     }
+
+    //     return redirect(route('admin.master-data.siswa.index'))->withToastSuccess('Data tersimpan');
+    // }
+    {
+        // dd($request->all());
+
+        $file = $request->file('foto');
+            $foto = $file->getClientOriginalName();
+            $file->move('materi', $foto);
+            $validatedData['foto'] = $foto;
+            $validatedData['isi'] = $request->isi;
+            $validatedData['matkul'] = $request->matkul;
+            $validatedData['nama'] = $request->nama;
+
+            Siswa::create($validatedData);
 
         return redirect(route('admin.master-data.siswa.index'))->withToastSuccess('Data tersimpan');
     }

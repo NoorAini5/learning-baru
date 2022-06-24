@@ -18,6 +18,7 @@ class CreateMapelsTable extends Migration
             $table->string('nama');
             $table->string('kelas_id');
             $table->string('guru');
+            $table->string('deskripsi');
             $table->timestamps();
             $table->softDeletes();
         });

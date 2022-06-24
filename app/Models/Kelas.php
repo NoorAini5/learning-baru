@@ -15,7 +15,8 @@ class Kelas extends Model
     public const ACTIVE = "aktif";
 
     protected $table = 'kelas';
-    protected $fillable = ['nama'];
+    protected $fillable = ['nama','deskripsi'];
+
     public $timestamps = false;
 
     public function Mapel()

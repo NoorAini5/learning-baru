@@ -15,7 +15,7 @@ class Materi extends Model
     public const ACTIVE = "aktif";
 
     protected $table = 'materis';
-    protected $fillable = ['nama','isi','matkul'];
+    protected $fillable = ['nama','isi','nama_file','video','matkul'];
     public $timestamps = false;
 
     public function mapel()

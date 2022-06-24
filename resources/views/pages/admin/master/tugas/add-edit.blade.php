@@ -20,7 +20,8 @@
 
 
 <!-- begin panel -->
-<form action="{{ isset($data) ? route('admin.master-data.tugas.update', $data->id) : route('admin.master-data.tugas.store') }}" id="form" name="form" method="POST" data-parsley-validate="true">
+    <form action="{{ isset($data) ? route('admin.master-data.tugas.update', $data->id) : route('admin.master-data.tugas.store') }}" id="form" name="form" method="POST" enctype="multipart/form-data" data-parsley-validate="true">
+
   @csrf
   @if(isset($data))
   {{ method_field('PUT') }}
@@ -39,7 +40,7 @@
     <!-- begin panel-body -->
     <div class="panel-body">
 
-        <form action="/upload/proses" method="POST" enctype="multipart/form-data">
+        {{-- <form action="/upload/proses" method="POST" enctype="multipart/form-data"> --}}
             {{ csrf_field() }}
 
       <div class="form-group">
@@ -52,7 +53,11 @@
       </div>
       <div class="form-group">
         <label for="name">File Tugas</label>
-        <input type="file" id="file" name="file" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->file ?? old('file') }}}">
+        <input type="file" id="file" name="nama_file" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->nama_file ?? old('file') }}}">
+      </div>
+      <div class="form-group">
+        <label for="name">Mata Pelajaran</label>
+        <x-form.Dropdown name="mapel" :options="$jenis_mapel" selected="{{{ old('mapel') ?? ($data['mapel'] ?? null) }}}" required />
       </div>
     </div>
     <!-- end panel-body -->

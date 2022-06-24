@@ -83,22 +83,13 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link active">Home</a>
                 <a href="" class="nav-item nav-link">About</a>
-                <a href="mapel" class="nav-item nav-link">Courses</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href=" {{ route('user.mapel.index') }} " class="nav-item nav-link">Kelas</a>
+                {{-- <a href="{{ route('user.mapel.index') }}" class="nav-item nav-link">KelasKu</a> --}}
             </div>
-            {{-- <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a> --}}
+            <a href="{{ route('user.mapel.index') }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">LOGIN<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
-
 
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5">
@@ -141,7 +132,7 @@
 
 
     <!-- Service Start -->
-    <div class="container-xxl py-5">
+    {{-- <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -157,7 +148,7 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                            {{-- <h5 class="mb-3">Online Classes</h5> --}}
+                            <h5 class="mb-3">Online Classes</h5>
                             <h5 href="about.html" class="nav-item nav-link">About</a>
                             <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
                         </div>
@@ -183,7 +174,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Service End -->
 
 
@@ -198,30 +189,24 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
-                    <h1 class="mb-4">Welcome to eLEARNING</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <h1 class="mb-4">Selamat datang di e-Learning </h1>
+                    <p class="mb-4">e-Learning ini menyediakan semua hal yang ingin anda pelajari, menyediakan materi pembelajaran dari anak-anak sampai orang nenek-nenek </p>
+                    <p class="mb-4">Dapatkan semua materi yang ingin ada pelajari secara cuma-cuma. Manfaatkan platform ini dan rubahlah duniamu agar menjadi lebih berwarna. e-Learning ini menyediakan :</p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Materi</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Diskusi</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Tugas</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Tutorial</p>
                         </div>
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                    {{-- <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a> --}}
                 </div>
             </div>
         </div>
@@ -230,7 +215,7 @@
 
 
     <!-- Courses Start -->
-    <div class="container-xxl py-5">
+    {{-- <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
@@ -323,12 +308,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Courses End -->
 
 
     <!-- Team Start -->
-    <div class="container-xxl py-5">
+    {{-- <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
@@ -409,7 +394,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Team End -->
 
 
@@ -460,7 +445,7 @@
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    {{-- <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
@@ -537,7 +522,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Footer End -->
 
 

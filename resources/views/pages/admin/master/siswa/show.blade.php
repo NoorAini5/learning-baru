@@ -139,6 +139,18 @@
             </div>
         </div>
 
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-1 my-auto">
+                    <label for="alamat"><strong>Foto</strong></label>
+                </div>
+                <div class="col-md-5">
+                    {{ $data['foto'] }}
+                </div>
+            </div>
+        </div>
+
     </div>
     <!-- end panel-body -->
     <!-- begin panel-footer -->
