@@ -19,8 +19,5 @@ class Kelas extends Model
 
     public $timestamps = false;
 
-    public function Mapel()
-    {
-        return $this->hasMany(Mapel::class);
-    }
+
 }

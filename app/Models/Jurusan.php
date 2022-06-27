@@ -14,8 +14,18 @@ class Jurusan extends Model
 
     public const ACTIVE = "aktif";
 
-    protected $table = 'jurusan';
+    protected $table = 'jurusans';
     protected $fillable = ['nama','fakultas'];
 
     public $timestamps = false;
+
+    public function Fakultas()
+    {
+        return $this->belongsTo(Fakultas::class, 'fakultas');
+    }
+
+    public function Mapel()
+    {
+        return $this->hasMany(Mapel::class, 'mapel');
+    }
 }

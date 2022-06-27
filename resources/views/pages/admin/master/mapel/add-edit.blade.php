@@ -43,8 +43,8 @@
         <input type="text" id="nama" name="nama" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->nama ?? old('nama') }}}">
       </div>
       <div class="form-group">
-        <label for="name">Kelas</label>
-        <x-form.Dropdown name="kelas_id" :options="$jenis_kelas" selected="{{{ old('kelas_id') ?? ($data['kelas_id'] ?? null) }}}" required />
+        <label for="name">Jurusan</label>
+        <x-form.Dropdown name="jurusan" :options="$jenis_jurusan" selected="{{{ old('jurusan') ?? ($data['jurusan'] ?? null) }}}" required />
       </div>
       <div class="form-group">
         <label for="name">Guru</label>

@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin\Master;
 
 use App\Datatables\Admin\Master\MapelDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\Fakultas;
 use App\Models\Mapel;
 use App\Models\Kelas;
 use App\Models\Guru;
+use App\Models\Jurusan;
 use Illuminate\Http\Request;
 
 class MapelController extends Controller
@@ -17,9 +19,10 @@ class MapelController extends Controller
     }
     public function create()
     {
-        $jenis_kelas = Kelas::pluck('nama', 'id');
+
         $jenis_guru = Guru::pluck('nama', 'id');
-        return view('pages.admin.master.mapel.add-edit', ['jenis_kelas'=> $jenis_kelas],['jenis_guru'=> $jenis_guru]);
+        $jenis_jurusan = Jurusan::pluck('nama', 'id');
+        return view('pages.admin.master.mapel.add-edit', ['jenis_guru'=> $jenis_guru, 'jenis_jurusan'=>$jenis_jurusan]);
     }
     public function store(Request $request)
     {
@@ -43,9 +46,9 @@ class MapelController extends Controller
     public function edit($id)
     {
         $data = Mapel::findOrFail($id);
-        $jenis_kelas= Kelas::pluck('nama','id');
+        $jenis_jurusan = Jurusan::pluck('nama', 'id');
         $jenis_guru= Guru::pluck('nama','id');
-        return view('pages.admin.master.mapel.add-edit', ['data' => $data, 'jenis_guru'=> $jenis_guru, 'jenis_kelas'=>$jenis_kelas]);
+        return view('pages.admin.master.mapel.add-edit', ['data' => $data, 'jenis_guru'=> $jenis_guru,'jenis_jurusan'=>$jenis_jurusan]);
     }
     public function update(Request $request, $id)
     {

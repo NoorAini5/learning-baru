@@ -44,7 +44,7 @@
       </div>
       <div class="form-group">
         <label for="name">Fakultas</label>
-        <input type="text" id="fakultas" name="fakultas" class="form-control" autofocus data-parsley-required="true" value="{{{ $data->fakultas ?? old('fakultas') }}}">
+        <x-form.Dropdown name="fakultas" :options="$jenis_fakultas" selected="{{{ old('fakultas') ?? ($data['fakultas'] ?? null) }}}" required />
       </div>
     </div>
     <!-- end panel-body -->

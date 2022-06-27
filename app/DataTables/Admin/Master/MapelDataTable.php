@@ -44,7 +44,7 @@ class MapelDataTable extends DataTable
      */
     public function query(Mapel $model)
     {
-        return $model->select('mapels.*')->with(['kelas','guru']);
+        return $model->select('mapels.*')->with(['guru','jurusan']);
 
     }
 
@@ -84,7 +84,7 @@ class MapelDataTable extends DataTable
                   ->width(60)
                   ->addClass('text-center'),
             Column::make('nama'),
-            Column::make('kelas')->data('kelas.nama'),
+            Column::make('jurusan')->data('jurusan.nama'),
             Column::make('guru')->data('guru.nama'),
             Column::make('deskripsi'),
 

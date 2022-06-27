@@ -44,7 +44,7 @@ class JurusanDataTable extends DataTable
      */
     public function query(Jurusan $model)
     {
-        return $model->newQuery();
+        return $model->select('jurusans.*')->with(['fakultas']);
     }
 
     /**
@@ -84,7 +84,7 @@ class JurusanDataTable extends DataTable
                   ->addClass('text-center'),
             //Column::make('id'),
             Column::make('nama'),
-            Column::make('fakultas'),
+            Column::make('fakultas')->data('fakultas.nama'),
         ];
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Master;
 
 use App\Datatables\Admin\Master\jurusanDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\Fakultas;
 use App\Models\Jurusan;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class JurusanController extends Controller
     }
     public function create()
     {
-        return view('pages.admin.master.jurusan.add-edit');
+        $jenis_fakultas = Fakultas::pluck('nama', 'id');
+        return view('pages.admin.master.jurusan.add-edit',['jenis_fakultas'=>$jenis_fakultas]);
     }
     public function store(Request $request)
     {

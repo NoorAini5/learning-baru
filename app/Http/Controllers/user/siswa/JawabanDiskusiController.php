@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\user\siswa;
 
+use App\Datatables\Admin\Master\MateriDataTable;
+use App\Http\Controllers\Controller;
 use App\Models\JawabanDiskusi;
 use Illuminate\Http\Request;
 
@@ -47,7 +49,6 @@ class JawabanDiskusiController extends Controller
                 $validatedData['judul'] = $request->judul;
 
                 JawabanDiskusi::create($validatedData);
-
             return redirect(route('admin.master-data.tugas.index'))->withToastSuccess('Data tersimpan');
         }
     }

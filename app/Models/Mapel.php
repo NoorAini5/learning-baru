@@ -16,13 +16,9 @@ class Mapel extends Model
     public const ACTIVE = "aktif";
 
     protected $table = 'mapels';
-    protected $fillable = ['nama','kelas_id','guru','deskripsi'];
+    protected $fillable = ['nama','jurusan','guru','deskripsi'];
     public $timestamps = false;
 
-    public function Kelas()
-    {
-        return $this->belongsTo(Kelas::class, 'kelas_id');
-    }
     public function Guru()
     {
         return $this->belongsTo(Guru::class, 'guru');
@@ -42,6 +38,10 @@ class Mapel extends Model
     public function Diskusi()
     {
         return $this->hasMany(Diskusi::class, 'diskusi');
+    }
+    public function Jurusan()
+    {
+        return $this->belongsTo(Jurusan::class, 'jurusan');
     }
 
 }

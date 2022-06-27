@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/token', function () {
     return csrf_token();
 });
-Route::view('/', 'home')->name('home');
+
 Route::group(['middleware' => 'auth:web', 'as' => 'user.'], function () {
+    Route::view('/', 'home')->name('home');
     Route::group(['namespace' => 'User'], function () {
     Route::resource('mapel', 'siswa\MapelController');
     // Route::get('diskusi/{id}', 'siswa\Mapel2Controller@tampildiskusi');
@@ -18,7 +19,7 @@ Route::group(['middleware' => 'auth:web', 'as' => 'user.'], function () {
     Route::resource('materi', 'siswa\MateriController');
     Route::resource('diskusi', 'siswa\DiskusiController');
     Route::resource('tugas', 'siswa\TugasController');
-    Route::resource('jawabandiskusi', 'siswa\JawbanDiskusiController');
+    Route::resource('jawabandiskusi', 'siswa\JawabanDiskusiController');
 
     Route::get('/downloadMateri/{nama_file}', [MateriController::class, 'downloadMateri']);
     // Route::get('/materi', function(){

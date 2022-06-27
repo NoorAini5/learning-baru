@@ -17,4 +17,10 @@ class Fakultas extends Model
     protected $fillable = ['nama'];
 
     public $timestamps = false;
+
+    public function Jurusan()
+    {
+        return $this->hasMany(Jurusan::class);
+    }
+
 }

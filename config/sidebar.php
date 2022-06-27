@@ -85,37 +85,6 @@ return [
                     ]
                         ],
 
-                // [
-                //     'icon' => 'fa fa-male',
-                //     'title' => 'Guru',
-                //     'url' => 'javascript:;',
-                //     'url' => '/admin/master-data/guru',
-                //      'title' => 'Guru'
-                // ],
-
-                    // [
-                    //     'icon' => 'fa fa-child',
-                    //     'title' => 'Siswa',
-                    //     'url' => 'javascript:;',
-                    //     'url' => '/admin/master-data/siswa',
-                    //     'title' => 'Siswa'
-
-
-                    // ],
-
-                    // [
-                    //     'icon' => 'fa fa-book',
-                    //     'title' => 'Kelas',
-                    //     'url' => 'javascript:;',
-                    //     'caret' => true,
-                    //     'sub_menu' => [
-                    //         [
-                    //             'url' => '/admin/master-data/mapel',
-                    //             'title' => '<i class="fa fa-ellipsis-h"></i>&nbsp;Mapel'
-                    //         ],
-                    //     ]
-                    // ],
-
                     [
                         'icon' => 'fa fa-book',
                         'title' => 'Mapel',
@@ -149,6 +118,11 @@ return [
             'icon' => 'fa fa-th-large',
             'title' => 'Dashboard',
             'url' => '/',
+            'caret' => false
+        ], [
+            'icon' => 'fa fa-book',
+            'title' => 'Mata Kuliah',
+            'url' => 'mapel2',
             'caret' => false
         ], [
             'icon' => 'fa fa-cogs',

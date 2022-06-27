@@ -15,11 +15,10 @@ class Mapel2Controller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-
         //  $mapels=Mapel::where('matkul', $id)->get();
-        return view('pages.admin.user.materi.show');
+        return view('pages.admin.user.mapel2.index');
     }
 
     /**
